@@ -1,0 +1,10 @@
+#balanceDisplay,
+#transactionDetails {
+    display: none;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: black;
+}
