@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/transfer.css">
+    <title>Transfer Funds</title>
+</head>
+<body>
+    <h2>Welcome, {{ username }}! Transfer Money</h2>
+    <form action="/transfer_funds" method="POST">
+        <label for="selected_user">Select a user to transfer money:</label>
+        <select id="selected_user" name="selected_user">
+            {% for user in users %}
+                <option value="{{ user[0] }}">{{ user[0] }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <label for="amount">Enter amount to transfer:</label>
+        <input type="number" id="amount" name="amount" required>
+        <div class="input-box">
+            <label><b>Enter 6-digit Pin</b></label>
+            <input type="password" name="pin" required placeholder="Enter 6 digit pin" pattern="\d{6}">
+        </div>
+        <br><br>
+        <button type="submit">Transfer</button>
+    </form>
+    <div id="particles-js">
+        <canvas class="particles-js-canvas-el" width="810" height="1080" style="width: 100%; height: 100%;"></canvas>
+    </div>
+    <script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="/static/back.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/static/pin.css">
+    <link rel="stylesheet" href = "/static/pinaf.css">
+
+    <title>{{ username }}</title>
+</head>
+<body>
+    <header>
+        <h2 class="logo">Welcome {{ username }}</h2>
+        <nav class="navigation">
+            <button class="btnNav" id="lastTransactionBtn">Last Transaction</button>
+            <button class="btnNav" id="balanceBtn">Balance</button>
+            <form action="/transfer" method="POST">
+                <button type="submit" class="btnNav" id="transferBtn">Transfer</button>
+            </form>
+            <div class="dropdown">
+                <button class="dropbtn">{{ username }}</button>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('thank') }}" class="btn"><b>Logout</b></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <span id="loggedInUsername" style="display: none;">{{ username }}</span>
+    <div id="balanceDisplay" style="margin-top: 20px;">
+        <h3>Balance Amount in your Account: </h3>
+        <br>
+        <p id="balanceAmount"></p>
+    </div>
+    <div id="transactionModal" class="modal">
+    </div>
+    <div id="particles-js">
+        <canvas class="particles-js-canvas-el" width="810" height="1080" style="width: 100%; height: 100%;"></canvas>
+    </div>
+    <script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="/static/back.js"></script>
+    <script src="/static/script.js"></script>
+    <script src="/static/pin.js"></script>
+    <!-- <script src="/static/pinaf.js"></script> -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

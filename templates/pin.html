@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/static/pin.css">
+
+    <title>Confirm Pin</title>
+</head>
+<body>
+    <header>
+        <h2 class="logo">Welcome {{ username }}</h2>
+        <nav class="navigation">
+            <button class="btnNav" id="lastTransactionBtn">Last Transaction</button>
+            <button class="btnNav" id="balanceBtn">Balance</button>
+            <button class="btnNav" id="transferBtn">Transfer</button>
+            </div>
+        </nav>
+    </header>
+    <h1><b>Enter Pin for securing your account while Transactions</b></h1>
+    <div class="wrapper">
+        <!-- Pin Box -->
+        <div class="pin">
+            <h2>Enter PIN</h2>
+            <form action="/submit_pin" method="post">
+                <div class="input-box">
+                    <input type="number" name="pin" required placeholder="Enter 6 digit pin">
+                    <label><b>Enter 6-digit Pin</b></label>
+                </div>
+                <div class="input-box">
+                    <input type="password" name="confirmPassword" required>
+                    <label><b>Confirm Pin</b></label>
+                </div>
+                <button type="submit" class="btn"><b>Confirm</b></button>
+            </form>
+        </div>
+    </div>
+    <div id="particles-js">
+        <canvas class="particles-js-canvas-el" width="810" height="1080" style="width: 100%; height: 100%;"></canvas>
+    </div>
+    <script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="/static/back.js"></script>
+    <script src="/static/script.js"></script>
+    <script src="/static/pin.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
